@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Andrew McMillan - Resume</title>
+  <style>
+    @page { size: Letter; margin: 0.55in 0.58in; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.38;
+    }
+    h1 {
+      margin: 0 0 2px;
+      color: #0f172a;
+      font-size: 21pt;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .contact {
+      margin: 0;
+      color: #334155;
+      font-size: 8.8pt;
+    }
+    h2 {
+      margin: 8px 0 3px;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #94a3b8;
+      color: #0f172a;
+      font-size: 10.5pt;
+      line-height: 1.1;
+      letter-spacing: 0.07em;
+    }
+    p { margin: 0 0 3px; }
+    .skills p { margin-bottom: 2px; }
+    .education-credentials { font-size: 10pt; }
+    .role {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 5px 0 2px;
+      color: #0f172a;
+      break-after: avoid;
+    }
+    .role span:last-child { white-space: nowrap; }
+    ul {
+      margin: 2px 0 4px 16px;
+      padding: 0;
+    }
+    li { margin: 0 0 2px; padding-left: 1px; }
+    a { color: inherit; text-decoration: none; }
+    strong { color: #0f172a; }
+    .nowrap { white-space: nowrap; }
+    section, .role-block { break-inside: avoid-page; }
+    .page-break { break-before: page; margin-top: 0; }
+    .projects p { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Andrew McMillan</h1>
+    <p class="contact">Kelowna, BC · <a href="mailto:andrew@andamonium.dev">andrew@andamonium.dev</a> · <a href="https://andamonium.dev">andamonium.dev</a> · <a href="https://github.com/andrewrmcmillan">github.com/andrewrmcmillan</a> · <a href="https://github.com/ItsAndrewM">github.com/ItsAndrewM</a></p>
+  </header>
+
+  <section>
+    <h2>SUMMARY</h2>
+    <p>Senior full-stack engineer who ships products end-to-end and builds on Cloudflare's developer platform: Workers, Durable Objects, Workers AI, and the Agents SDK. Builds agentic tools, including two code review services, where application code validates what the model proposes and holds the verdict, backed by lint rules, hooks, and benchmarks.</p>
+  </section>
+
+  <section class="skills">
+    <h2>TECHNICAL SKILLS</h2>
+    <p><strong>Languages:</strong> TypeScript, JavaScript, Go, Python, SQL, HTML/CSS</p>
+    <p><strong>Cloudflare:</strong> Workers, Durable Objects (SQLite), Workers AI, Agents SDK, Containers, Queues, Workflows, D1, R2, Access</p>
+    <p><strong>AI Engineering:</strong> Claude, Workers AI models, GPT-4o, MCP servers, structured output with schema validation, recall benchmarks, replay evaluation, spend caps, Claude Code skills and hooks, custom oxlint rules</p>
+    <p><strong>Product Engineering:</strong> React 19, Next.js, TanStack, Tailwind CSS, Capacitor, Hono, Node.js, REST/OpenAPI, GraphQL</p>
+    <p><strong>Data &amp; Cloud:</strong> PostgreSQL, Redis, Firestore, MySQL/MariaDB, Stripe, GCP Cloud Run, Terraform, GitHub Actions, Playwright, Vitest</p>
+  </section>
+
+  <h2>WORK EXPERIENCE</h2>
+  <div>
+    <div class="role"><strong>Senior Software Engineer, GameSheet Inc.</strong><span>Newmarket, ON, remote | <strong>2024 - Present</strong></span></div>
+    <ul>
+      <li>Own the embeddable stats widget end-to-end: a Next.js App Router and React 19 product with a dedicated BFF that serves live scores, standings, and player statistics on league websites across North America. Authored 95% of its commits and replaced the prior product behind existing public URLs with no embedder changes.</li>
+      <li>Built Project Warden, a code review service on Cloudflare Workers and Durable Objects that runs before a pull request is opened, now in pilot. An author or coding agent uploads a commit, Claude reviews it, and each later round reviews only what changed. Application code decides readiness and caps spend at $2 a review. Ships as a CLI and a three-tool MCP server.</li>
+      <li>Wrote the team's oxlint plugin (seven rules, used in 6 repositories), set up a Copilot review status check in 16 repositories, and wrote most of the shared Claude Code skills for deploys, triage, and merges, plus hooks that lint an agent's edits and send it back to fix errors before it finishes.</li>
+      <li>Built gamesheet-bot, an agentic GitHub PR reviewer packaged for Cloud Run: Zod-validated reports, a verdict computed by application code, a no-post replay harness against real PRs, and secret allowlisting and redaction for untrusted code.</li>
+      <li>Lead development of the Teams+ monorepo, contributing about 70% of 3,000 commits across a React 19 and Capacitor app for web, iOS, and Android, a Hono API gateway on Cloud Run, and a shared Storybook design system.</li>
+      <li>Built an event-driven Firebase Auth to PostgreSQL identity bridge and a batch reconciler that repairs historical account mismatches.</li>
+      <li>Restored live scoring after a mis-scoped Redis credential caused an outage, rolled back within the hour, and replayed events to recover all 159 affected games.</li>
+      <li>Work across a 1,000-file Terraform estate covering Cloud Run services, DNS, secrets management, and VCS-driven infrastructure delivery.</li>
+    </ul>
+  </div>
+
+  <div class="role-block">
+    <div class="role"><strong>Founder and Sole Engineer, PlayLabs</strong><span>Kelowna, BC | <strong>2024 - Present</strong></span></div>
+    <ul>
+      <li>Built and launched a live AI SaaS for K-5 physical-education teachers; the production build took 3.5 weeks and 115 commits, and it is now in pilot with teachers.</li>
+      <li>Own all three production surfaces: a React 19 SPA, an OpenAPI Hono API on Cloudflare Workers, and a Next.js marketing site.</li>
+      <li>Designed the AI features on GPT-4o: curriculum-aligned lesson generation, a durable Cloudflare Workflow that builds a 20-lesson semester, and content moderation tuned for K-5.</li>
+      <li>Built the Supabase PostgreSQL data model through 40 migrations with row-level security, and Stripe subscriptions across three tiers with per-tier AI limits.</li>
+    </ul>
+  </div>
+
+  <div class="role-block">
+    <div class="role"><strong>Software Engineer, Precision Sail Loft Ltd.</strong><span>Sidney, BC | <strong>2023 - 2024</strong></span></div>
+    <ul>
+      <li>Owned full-stack changes across three marine e-commerce sites, including WordPress and WooCommerce systems in PHP and JavaScript and a Next.js storefront integrated with WooCommerce operations.</li>
+      <li>Redesigned MySQL and MariaDB schemas, shipped custom product tools and plugins, and instrumented performance and conversion tracking with Google Analytics, Search Console, and Tag Manager.</li>
+    </ul>
+  </div>
+
+  <div class="role-block">
+    <div class="role"><strong>Freelance Full-Stack Developer, dinocode</strong><span>Kelowna, BC | <strong>January 2023 - Present</strong></span></div>
+    <ul>
+      <li>Run a freelance practice delivering e-commerce, marketing sites, and dashboards for small businesses, owning discovery, design, development, integrations, deployment, and client communication.</li>
+      <li>Built and maintain a Next.js 16 farm storefront and API backed by Square, keeping its online catalog and inventory aligned with the existing physical point-of-sale system.</li>
+    </ul>
+  </div>
+
+  <section class="projects">
+    <h2>PROJECTS</h2>
+    <p><strong>andabot</strong> | <strong>2026</strong> · Self-hosted pull request reviewer on Cloudflare Workers, Durable Objects, Workers AI, and the Agents SDK. Host code validates every finding against the diff and derives the verdict, and changes are judged on a frozen 22-pull-request recall benchmark. 560 commits, 2,081 tests.</p>
+    <p><strong>Baby tracker</strong> | <strong>2026</strong> · Two-caregiver tracker in daily use, on one SQLite Durable Object behind Cloudflare Access, with a 100% domain coverage gate, tests under two time zones, and migrations rehearsed against real exports.</p>
+    <p><strong>Strix</strong> | <strong>2026, in progress</strong> · Hockey video event tagger: an ffmpeg container slices games, a Queue fans clips out to a Workers AI multimodal model, and code validates the typed answers and applies confidence thresholds.</p>
+  </section>
+
+  <section>
+    <h2>EDUCATION</h2>
+    <div class="role"><strong>Concordia University, Montreal</strong><span><strong>December 2022</strong></span></div>
+    <p>Diploma, Fullstack Web Development</p>
+    <div class="role"><strong>Camosun College, Victoria</strong><span><strong>June 2017</strong></span></div>
+    <p class="education-credentials">B.A. Sport and Fitness Leadership, With Distinction · Diploma, Sport Management<span class="nowrap"> · Certificate, Business Management</span></p>
+  </section>
+</body>
+</html>
