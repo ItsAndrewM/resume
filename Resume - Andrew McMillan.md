@@ -38,9 +38,9 @@ Senior full-stack engineer who ships products end-to-end and builds on Cloudflar
 - Designed the AI features on GPT-4o: curriculum-aligned lesson generation, a durable Cloudflare Workflow that builds a 20-lesson semester, and content moderation tuned for K-5.
 - Built the Supabase PostgreSQL data model through 40 migrations with row-level security, and Stripe subscriptions across three tiers with per-tier AI limits.
 
-**Software Engineer, Precision Sail Loft Ltd.** · Sidney, BC | **2023 - 2024**
+**Software Engineer, Precision Sail Loft Ltd.** · Sidney, BC | **January 2023 - 2024**
 
-- Owned full-stack changes across three marine e-commerce sites, including WordPress and WooCommerce systems in PHP and JavaScript and a Next.js storefront integrated with WooCommerce operations.
+- Owned full-stack changes across three marine e-commerce sites built on WordPress, WooCommerce, PHP, React, and Builder.io, including custom WordPress plugins and a Next.js storefront integrated with WooCommerce operations.
 - Redesigned MySQL and MariaDB schemas, shipped custom product tools and plugins, and instrumented performance and conversion tracking with Google Analytics, Search Console, and Tag Manager.
 
 **Freelance Full-Stack Developer, dinocode** · Kelowna, BC | **January 2023 - Present**
